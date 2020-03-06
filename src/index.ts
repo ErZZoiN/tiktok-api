@@ -41,17 +41,17 @@ export default class TikTokAPI {
       paramsSerializer: paramsSerializer(paramsOrder),
       baseURL: this.config.baseURL,
       headers: {
-        host: this.config.host,
-        connection: 'keep-alive',
-        'accept-encoding': 'gzip',
-        'user-agent': this.config.userAgent,
+        //host: this.config.host,
+        //connection: 'keep-alive',
+        //'accept-encoding': 'gzip',
+        //'user-agent': this.config.userAgent,
         'sdk-version': 1,
         'x-ss-tc': 0,
       },
       jar: this.cookieJar,
       params: reqParams,
       transformResponse: this.transformResponse,
-      withCredentials: true,
+      withCredentials: false,
       ...requestConfig,
     } as AxiosRequestConfig);
     axiosCookieJarSupport(this.request);
